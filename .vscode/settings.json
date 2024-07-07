@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "python/test", "-vvv"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
