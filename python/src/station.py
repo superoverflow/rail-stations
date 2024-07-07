@@ -35,7 +35,7 @@ class WikiRailStationHTMLParser(HTMLParser):
             self.capture = None
 
     def handle_data(self, data: str):
-        if self.capture == CaptureFlag.NAME and self.name_buffer:
+        if self.capture == CaptureFlag.NAME:
             self.flush_buffer()
 
         match self.capture:
@@ -47,13 +47,14 @@ class WikiRailStationHTMLParser(HTMLParser):
                 self.nickname_buffer = data
 
     def flush_buffer(self):
-        self.result.append(
-            RailStation(
-                name=self.name_buffer,
-                postcode=self.postcode_buffer,
-                nickname=self.nickname_buffer,
+        if self.name_buffer:
+            self.result.append(
+                RailStation(
+                    name=self.name_buffer,
+                    postcode=self.postcode_buffer,
+                    nickname=self.nickname_buffer,
+                )
             )
-        )
         self.name_buffer = None
         self.postcode_buffer = None
         self.nickname_buffer = None

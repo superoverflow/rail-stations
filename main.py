@@ -1,4 +1,4 @@
-from python.src.extract_wiki import WikiRailStationHTMLParser
+from python.src.station import WikiRailStationHTMLParser
 from pathlib import Path
 import os
 

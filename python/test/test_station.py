@@ -1,6 +1,6 @@
 import pytest
 
-from python.src.extract_wiki import WikiRailStationHTMLParser, RailStation
+from python.src.station import WikiRailStationHTMLParser, RailStation
 
 
 @pytest.fixture
