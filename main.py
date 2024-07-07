@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 
 
-def list_rail_html_files(data_dir: Path = Path("data")):
+def list_rail_html_files(data_dir: Path = Path("data/rail_stations")):
     yield from [data_dir / f for _, _, files in os.walk(data_dir) for f in files]
 
 
@@ -14,8 +14,8 @@ def read_file(filename: str):
 
 
 def main():
-    parser = WikiRailStationHTMLParser()
     for f in list_rail_html_files():
+        parser = WikiRailStationHTMLParser()
         text = read_file(f)
         parser.feed(text)
         print(f.name, len(parser.result))
