@@ -42,5 +42,5 @@ if __name__ == "__main__":
     resp1 = PostcodeInfoProvider().lookup_bulk_postcodes(
         ["PR3 0SG", "M45 6GN", "EX165BL"]
     )
-    resp2 = PostcodeInfoProvider().lookup_single_postcode("E16 1YE")
+    resp2 = PostcodeInfoProvider().lookup_single_postcode("PR3 0SG")
     pass
